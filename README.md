@@ -17,6 +17,9 @@ This is a web application that let's you create your own heroes and squads
 - Clone this repo
 - Run Gradle build in your IDE and hit the run button  
 
+## Known Bugs
+There is a problem when deploying to Heroku app
+
 ## Technologies Used
 - Java
 - Spark
