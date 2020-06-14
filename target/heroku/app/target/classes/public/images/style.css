@@ -1,0 +1,37 @@
+#row_class{
+    padding_top:30px;
+}
+
+#namehero{
+    font-family: 'Anton', sans-serif;
+}
+.squad{
+    font-family: 'Bree Serif', serif;
+    text-align: center;
+
+}
+#agehero{
+    font-family: 'Anton', sans-serif;
+}
+
+#powerhero{
+    font-family: 'Anton', sans-serif;
+}
+
+#weaknesshero{
+    font-family: 'Anton', sans-serif;
+}
+.heroes{
+    padding-left:60px;
+}
+
+.info{
+    padding-left:80px;
+}
+.char{
+    text-align:center;
+}
+.herotitle{
+    font-family: 'Bree Serif', serif;
+
+}

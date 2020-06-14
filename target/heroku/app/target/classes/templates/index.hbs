@@ -1,0 +1,98 @@
+{{#partial "title"}}Home{{/partial}}
+
+{{#partial "content"}}
+    <center><h1 class="herotitle">HeroSquad</h1></center>
+    <div class="row" id="row_class">
+        <div class="col-sm-4">
+            <h2><span class="label label-info">Add Squad</span></h2>
+            <form action="/postNewSquad" method="post">
+                <div class="form-group">
+                    <label for="max">MaxSize:</label>
+                    <input type="number" class="form-control" placeholder="Enter maxsize" id="maxsize" name = "maxsize" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter name" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Cause:</label>
+                    <input type="text" class="form-control" placeholder="Enter cause" id="cause" name="cause"required >
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <h2>List of Squads</h2>
+
+
+            {{#each allSquads}}
+                <label>Size</label>
+            <h2><span class="badge badge-secondary">{{maxsize}}</span></h2>
+            <label>Name</label>
+            <h2><span class="badge badge-secondary">{{name}}</span></h2>
+            <label>Cause</label>
+            <h2><span class="badge badge-secondary">{{cause}}</span></h2>
+            {{/each}}
+
+        </div>
+
+
+            <div class="form-group heroes">
+
+                <h2><span class="label label-info">Add hero</span></h2>
+                    <form action="/postNewHero" method="post">
+                        <div class="form-group">
+                            <label for="max">Age:</label>
+                            <input type="number" class="form-control" placeholder="Enter age" id="maxsize" name ="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Hero Name:</label>
+                            <input type="text" class="form-control" placeholder="Enter hero name" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Power:</label>
+                            <input type="text" class="form-control" placeholder="Enter power" id="cause" name="power">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Weakness:</label>
+                            <input type="text" class="form-control" placeholder="Enter weakness" id="cause" name="weakness" required>
+                        </div>
+
+                        <label class="control-label">Select Squad</label>
+
+                        <select class="form-control input-sm mb15" name="squadTeam">
+                            <option value="">-</option>
+                            {{#each allSquads}}
+                                <option value="{{id}}">{{name}}</option>
+                            {{/each}}
+                        </select>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+                    </form>
+
+
+
+
+    </div>
+        <div class="info">
+            <h2><span class="label label-info">Squad hero list</span></h2>
+            {{#if allSquads}}
+                <p>Here's a list of all the squads </p>
+                <ol>
+                    {{#each allSquads}}
+                        <li>{{name}} | <a href="/showSquadForHeroes/{{id}}">View Heroes</a> </li>
+                    {{/each}}
+                </ol>
+            {{else}}
+                <p class="text-danger">Don't have any Squad for your heroes</p>
+            {{/if}}
+
+        </div>
+
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
